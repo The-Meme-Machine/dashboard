@@ -5,7 +5,9 @@
       <h1>{{`${hardware.system.manufacturer}'s ${hardware.system.model}`}}</h1>
       <div>
         <div class="cpu">
-          <h2>CPU</h2>
+          <h2>
+            <font-awesome-icon icon="microchip" />CPU
+          </h2>
           <h3>{{`${hardware.cpu.manufacturer} ${hardware.cpu.brand} @ ${hardware.cpu.speed} GHz`}}</h3>
           <ul>
             <li>Clock Speed: {{hardware.cpu.speed}} GHz</li>
@@ -18,8 +20,11 @@
             <li>L3 Cache: {{hardware.cpu.cache.l3 / (1024 * 1024)}} MB</li>
           </ul>
         </div>
+        <hr />
         <div class="ram">
-          <h2>RAM</h2>
+          <h2>
+            <font-awesome-icon icon="memory" />RAM
+          </h2>
           <div v-for="bank in hardware.memLayout" :key="bank.bank">
             <h3>{{`${bank.manufacturer} ${bank.formFactor} @ ${bank.clockSpeed} MHz`}}</h3>
             <ul>
@@ -29,8 +34,11 @@
             </ul>
           </div>
         </div>
+        <hr />
         <div class="gpu">
-          <h2>GPU</h2>
+          <h2>
+            <font-awesome-icon icon="gamepad" />GPU
+          </h2>
           <div v-for="gpu in hardware.graphics.controllers" :key="gpu.model">
             <h3>{{gpu.model}}</h3>
             <ul>
@@ -40,8 +48,11 @@
             </ul>
           </div>
         </div>
+        <hr />
         <div class="display">
-          <h2>Displays</h2>
+          <h2>
+            <font-awesome-icon icon="desktop" />Displays
+          </h2>
           <div v-for="display in hardware.graphics.displays" :key="display.model">
             <h3>{{`${display.connection} ${display.vendor} ${display.model}`}}</h3>
             <ul>
@@ -52,8 +63,11 @@
             </ul>
           </div>
         </div>
+        <hr />
         <div class="motherboard">
-          <h2>Motherboard</h2>
+          <h2>
+            <font-awesome-icon icon="server" />Motherboard
+          </h2>
           <h3>{{`${hardware.baseboard.manufacturer} Model ${hardware.baseboard.model}`}}</h3>
           <ul>
             <li>Version: {{hardware.baseboard.version}}</li>
@@ -66,10 +80,18 @@
             </li>
           </ul>
         </div>
+        <hr />
         <div class="disk">
-          <h2>Disks</h2>
+          <h2>
+            <font-awesome-icon icon="database" />Disks
+          </h2>
           <div v-for="disk in hardware.diskLayout" :key="disk.name">
-            <h3>{{disk.name}}</h3>
+            <h3>
+              <font-awesome-icon icon="hdd" v-if="disk.type === 'HD'" />
+              <font-awesome-icon icon="hdd" v-if="disk.type === 'SSD'" />
+              <font-awesome-icon icon="sd-card" v-if="disk.interfaceType === 'USB'" />
+              {{disk.name}}
+            </h3>
             <ul>
               <li>Size: {{Math.floor(disk.size / (1024 * 1024))}} MB</li>
               <li>Type: {{disk.type}}</li>
@@ -77,8 +99,11 @@
             </ul>
           </div>
         </div>
+        <hr />
         <div class="system">
-          <h2>System</h2>
+          <h2>
+            <font-awesome-icon icon="keyboard" />System
+          </h2>
           <h3>{{hardware.os.hostname}}</h3>
           <ul>
             <li>Architecture: {{hardware.os.arch}}</li>
@@ -89,11 +114,18 @@
             <li>Build: {{hardware.os.build}}</li>
           </ul>
         </div>
+        <hr />
         <div class="network">
-          <h2>Network</h2>
+          <h2>
+            <font-awesome-icon icon="network-wired" />Network
+          </h2>
           <!-- interface is a reserved keyword -->
           <div v-for="adapter in hardware.net" :key="adapter.ifaceName">
-            <h3>{{adapter.ifaceName}}</h3>
+            <h3>
+              <font-awesome-icon icon="ethernet" v-if="adapter.type === 'wired'" />
+              <font-awesome-icon icon="wifi" v-if="adapter.type === 'wireless'" />
+              {{adapter.ifaceName}}
+            </h3>
             <ul>
               <li>Type: {{adapter.type}}</li>
               <li>Interface: {{adapter.iface}}</li>
