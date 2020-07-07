@@ -36,15 +36,15 @@ router.get('/detail', (req, res) => {
 })
 
 router.get('/static', (req, res) => {
-  si.getStaticData((data) => {
-    res.send(data)
-  })
+  si.getStaticData(data => res.send(data))
 })
 
 router.get('/dynamic', (req, res) => {
-  si.getDynamicData((data) => {
-    res.send(data)
-  })
+  si.getDynamicData(data => res.send(data))
+})
+
+router.get('/latency', (req, res) => {
+  si.inetLatency().then(data => res.send(data));
 })
 
 module.exports = router;

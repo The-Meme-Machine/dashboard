@@ -1,5 +1,7 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <h1>Remote Management Dashboard</h1>
+  </div>
 </template>
 
 <script>

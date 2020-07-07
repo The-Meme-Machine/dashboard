@@ -11,6 +11,7 @@ const compression = require('compression');
 const helmet = require('helmet');
 const history = require('connect-history-api-fallback');
 const ip = require('ip');
+const cors = require('cors');
 
 const hardwareRouter = require('./routes/hardware');
 
@@ -27,6 +28,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(helmet());
 app.disable('x-powered-by');
+
+app.use(cors());
 
 app.use('/hardware', hardwareRouter);
 

@@ -16,6 +16,16 @@ const routes = [{
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import( /* webpackChunkName: "hardware" */ '../views/Hardware.vue')
+  },
+  {
+    path: '/dynamic',
+    name: 'Dynamic Stats',
+    component: () => import( /* webpackChunkName: "dynamic" */ '../views/Dynamic.vue')
+  },
+  {
+    path: '/custom',
+    name: 'Custom Dash',
+    component: () => import( /* webpackChunkName: "custom" */ '../views/Custom.vue')
   }
 ]
 
