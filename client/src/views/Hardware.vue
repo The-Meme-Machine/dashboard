@@ -6,7 +6,7 @@
       <div>
         <div class="cpu">
           <h2>
-            <font-awesome-icon icon="microchip" />CPU
+            <font-awesome-icon icon="microchip" />&nbsp;CPU
           </h2>
           <h3>{{`${hardware.cpu.manufacturer} ${hardware.cpu.brand} @ ${hardware.cpu.speed} GHz`}}</h3>
           <ul>
@@ -23,7 +23,7 @@
         <hr />
         <div class="ram">
           <h2>
-            <font-awesome-icon icon="memory" />RAM
+            <font-awesome-icon icon="memory" />&nbsp;RAM
           </h2>
           <div v-for="bank in hardware.memLayout" :key="bank.bank">
             <h3>{{`${bank.manufacturer} ${bank.formFactor} @ ${bank.clockSpeed} MHz`}}</h3>
@@ -37,7 +37,7 @@
         <hr />
         <div class="gpu">
           <h2>
-            <font-awesome-icon icon="gamepad" />GPU
+            <font-awesome-icon icon="gamepad" />&nbsp;GPU
           </h2>
           <div v-for="gpu in hardware.graphics.controllers" :key="gpu.model">
             <h3>{{gpu.model}}</h3>
@@ -51,7 +51,7 @@
         <hr />
         <div class="display">
           <h2>
-            <font-awesome-icon icon="desktop" />Displays
+            <font-awesome-icon icon="desktop" />&nbsp;Displays
           </h2>
           <div v-for="display in hardware.graphics.displays" :key="display.model">
             <h3>{{`${display.connection} ${display.vendor} ${display.model}`}}</h3>
@@ -66,7 +66,7 @@
         <hr />
         <div class="motherboard">
           <h2>
-            <font-awesome-icon icon="server" />Motherboard
+            <font-awesome-icon icon="server" />&nbsp;Motherboard
           </h2>
           <h3>{{`${hardware.baseboard.manufacturer} Model ${hardware.baseboard.model}`}}</h3>
           <ul>
@@ -83,7 +83,7 @@
         <hr />
         <div class="disk">
           <h2>
-            <font-awesome-icon icon="database" />Disks
+            <font-awesome-icon icon="database" />&nbsp;Disks
           </h2>
           <div v-for="disk in hardware.diskLayout" :key="disk.name">
             <h3>
@@ -102,7 +102,7 @@
         <hr />
         <div class="system">
           <h2>
-            <font-awesome-icon icon="keyboard" />System
+            <font-awesome-icon icon="keyboard" />&nbsp;System
           </h2>
           <h3>{{hardware.os.hostname}}</h3>
           <ul>
@@ -117,7 +117,7 @@
         <hr />
         <div class="network">
           <h2>
-            <font-awesome-icon icon="network-wired" />Network
+            <font-awesome-icon icon="network-wired" />&nbsp;Network
           </h2>
           <!-- interface is a reserved keyword -->
           <div v-for="adapter in hardware.net" :key="adapter.ifaceName">

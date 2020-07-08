@@ -9,27 +9,31 @@ const defaultState = () => {
     staticHardware: null,
     customLayout: [{
         i: "CPU",
+        original: "CPU",
         x: 0,
         y: 0,
         w: 3,
         h: 2
       },
       {
-        i: "GPU",
+        i: "RAM",
+        original: "RAM",
         x: 3,
         y: 0,
         w: 3,
         h: 2
       },
       {
-        i: "RAM",
+        i: "GPU",
+        original: "GPU",
         x: 6,
         y: 0,
         w: 3,
         h: 2
       },
       {
-        i: "General",
+        i: "Display",
+        original: "Display",
         x: 9,
         y: 0,
         w: 3,
@@ -37,6 +41,7 @@ const defaultState = () => {
       },
       {
         i: "Motherboard",
+        original: "Motherboard",
         x: 0,
         y: 2,
         w: 3,
@@ -44,6 +49,7 @@ const defaultState = () => {
       },
       {
         i: "Disk",
+        original: "Disk",
         x: 3,
         y: 2,
         w: 3,
@@ -51,7 +57,16 @@ const defaultState = () => {
       },
       {
         i: "OS",
+        original: "OS",
         x: 6,
+        y: 2,
+        w: 3,
+        h: 2
+      },
+      {
+        i: 'Network',
+        original: "Network",
+        x: 9,
         y: 2,
         w: 3,
         h: 2
@@ -78,6 +93,9 @@ export default new Vuex.Store({
     },
     setLayout: (state, layout) => {
       state.customLayout = layout
+    },
+    setName: (state, data) => {
+      state.customLayout[data.index].i = data.name
     }
   },
   actions: {
@@ -110,6 +128,17 @@ export default new Vuex.Store({
       layout
     }) => {
       commit('setLayout', layout)
+    },
+    setName: ({
+      commit
+    }, {
+      name,
+      index
+    }) => {
+      commit('setName', {
+        name,
+        index
+      })
     }
   },
   modules: {},

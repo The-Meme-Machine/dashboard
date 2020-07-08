@@ -47,4 +47,8 @@ router.get('/latency', (req, res) => {
   si.inetLatency().then(data => res.send(data));
 })
 
+// router.get('/networks', (req, res) => {
+//   si.
+// })
+
 module.exports = router;

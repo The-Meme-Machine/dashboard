@@ -37,6 +37,7 @@ export default {
 
 <style>
 #app {
+  color: lightgrey;
 }
 
 #nav {
@@ -47,6 +48,10 @@ export default {
 }
 
 #nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+h2 {
   color: #42b983;
 }
 </style>
