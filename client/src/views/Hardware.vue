@@ -144,6 +144,7 @@
         </div>
       </div>
     </template>
+    <p v-else>Loading...</p>
     <button @click="updateInfo">Refresh</button>
   </div>
 </template>

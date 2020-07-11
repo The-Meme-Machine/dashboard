@@ -26,6 +26,11 @@ const routes = [{
     path: '/custom',
     name: 'Custom Dash',
     component: () => import( /* webpackChunkName: "custom" */ '../views/Custom.vue')
+  },
+  {
+    path: '/networks',
+    name: 'Networks',
+    component: () => import( /* webpackChunkName: "network" */ '../views/Networks.vue')
   }
 ]
 

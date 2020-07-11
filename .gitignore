@@ -1,3 +1,7 @@
+client/dist*
+history.js
+key.js
+
 # Logs
 logs
 *.log

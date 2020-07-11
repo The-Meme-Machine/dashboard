@@ -26,3 +26,4 @@ npm install
 ```
 npm run build
 ```
+Before building, make sure the production flag in client/config.js is set to true!

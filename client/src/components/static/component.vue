@@ -174,7 +174,17 @@ export default {
 <style>
 select {
   float: right;
+  padding-right: 0.8rem;
+  padding-left: 0.3rem;
   margin-right: 0.5rem;
-  background: #42b983;
+  word-wrap: normal;
+  color: var(--foreground-secondary);
+  border: 1px solid var(--foreground-primary);
+  border-radius: 3px;
+  background: var(--background-secondary)
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23deb992' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
+    no-repeat right 0.3rem center/8px 10px;
+  vertical-align: middle;
+  appearance: none;
 }
 </style>
