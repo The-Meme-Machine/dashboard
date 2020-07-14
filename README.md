@@ -26,4 +26,11 @@ npm install
 ```
 npm run build
 ```
-Before building, make sure the production flag in client/config.js is set to true!
+## Run 
+Either you can setup a system service or just run 
+```
+cd .. 
+node app.js
+```
+
+**Before building, make sure the production flag in client/config.js is set to true!**
